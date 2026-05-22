@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art & Entertainment Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .service-card {
+            transition: all 0.4s ease;
+            transform-origin: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.8);  /* Changed to dark black shadow */
+        }
+
+        .art-icon {
+            animation: colorful 4s infinite;
+        }
+
+        @keyframes colorful {
+            0% { transform: rotate(0deg); color: #ef4444; }
+            25% { transform: rotate(90deg); color: #8b5cf6; }
+            50% { transform: rotate(180deg); color: #06b6d4; }
+            75% { transform: rotate(270deg); color: #22c55e; }
+            100% { transform: rotate(360deg); color: #ef4444; }
+        }
+
+        .service-card:hover .art-icon {
+            animation-duration: 2s;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold text-center text-purple-600 mb-12">Art & Entertainment Services</h1>
+        
+        <div class="flex flex-wrap justify-center gap-8">
+            <!-- Tattoo Artist -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="art-icon text-purple-600 mb-4 flex items-center gap-2">
+                        <i class="fas fa-pen-nib text-4xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Tattoo Artist</h3>
+                    <p class="text-gray-600 text-center mb-4">Professional tattoo services</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/tattoo+artist" target="_blank" 
+                    class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Voice Over Artist -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="art-icon text-purple-600 mb-4">
+                        <i class="fas fa-microphone text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Voice Over Artist</h3>
+                    <p class="text-gray-600 text-center mb-4">Professional voice talent</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/voice+over+artist" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stand-up Comedian -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="art-icon text-purple-600 mb-4">
+                        <i class="fas fa-theater-masks text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Stand-up Comedian</h3>
+                    <p class="text-gray-600 text-center mb-4">Entertainment for events</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/comedian" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Magician -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="art-icon text-purple-600 mb-4">
+                        <i class="fas fa-hat-wizard text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Magician</h3>
+                    <p class="text-gray-600 text-center mb-4">Magical entertainment</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/magician" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Fashion Stylist -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="art-icon text-purple-600 mb-4">
+                        <i class="fas fa-tshirt text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Fashion Stylist</h3>
+                    <p class="text-gray-600 text-center mb-4">Professional style consulting</p>
+                </div>
+                <!-- Example for one service card, apply to all cards -->
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/fashion+stylist" target="_blank" 
+                       class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<style>
+    body {
+        background-color: #df6f46;
+        background: -webkit-linear-gradient(to right, #df6f46, #df6f46);
+        background: linear-gradient(to right,#df6f46, #df6f46);
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .service-card, .bg-white {
+        background-color: #ffffff;  /* Changed from transparent to white */
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+
+    .text-gray-600 {
+        color: #4B5563;  /* Added to ensure text visibility on white background */
+    }
+</style>

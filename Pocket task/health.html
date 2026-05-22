@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .service-card {
+            transition: all 0.4s ease;
+            transform-origin: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .health-icon {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .service-card:hover .health-icon {
+            animation-duration: 1s;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold text-center text-teal-600 mb-12">Healthcare Services</h1>
+        
+        <div class="flex flex-wrap justify-center gap-8">
+            <!-- Pharma Assistant -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="health-icon text-teal-600 mb-4 flex items-center gap-2">
+                    <i class="fas fa-pills text-4xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Pharma Assistant</h3>
+                <p class="text-gray-600 text-center mb-4">Pharmacy support professional</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-teal-600 text-white px-6 py-2 rounded-lg hover:bg-teal-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/pharmacy+assistant" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Medical Lab Assistant -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="health-icon text-teal-600 mb-4">
+                    <i class="fas fa-flask text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Lab Assistant</h3>
+                <p class="text-gray-600 text-center mb-4">Medical laboratory professional</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-teal-600 text-white px-6 py-2 rounded-lg hover:bg-teal-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/medical+laboratory" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Home Nurse -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="health-icon text-teal-600 mb-4">
+                    <i class="fas fa-user-nurse text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Home Nurse</h3>
+                <p class="text-gray-600 text-center mb-4">Professional home healthcare</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-teal-600 text-white px-6 py-2 rounded-lg hover:bg-teal-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/home+nurse" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Nurse -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="health-icon text-teal-600 mb-4">
+                    <i class="fas fa-hospital-user text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Nurse</h3>
+                <p class="text-gray-600 text-center mb-4">Clinical nursing professional</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-teal-600 text-white px-6 py-2 rounded-lg hover:bg-teal-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/nurse+jobs" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Compounder -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="health-icon text-teal-600 mb-4">
+                    <i class="fas fa-mortar-pestle text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Compounder</h3>
+                <p class="text-gray-600 text-center mb-4">Medicine preparation specialist</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-teal-600 text-white px-6 py-2 rounded-lg hover:bg-teal-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/compounder+jobs" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Other Services -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="health-icon text-teal-600 mb-4">
+                    <i class="fas fa-plus-circle text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Other Services</h3>
+                <p class="text-gray-600 text-center mb-4">Additional healthcare support</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-teal-600 text-white px-6 py-2 rounded-lg hover:bg-teal-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/healthcare+services" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

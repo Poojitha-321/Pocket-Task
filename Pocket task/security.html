@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .service-card {
+            transition: all 0.4s ease;
+            transform-origin: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .security-icon {
+            animation: patrol 3s infinite;
+        }
+
+        @keyframes patrol {
+            0% { transform: translateX(-10px) rotate(-5deg); }
+            50% { transform: translateX(10px) rotate(5deg); }
+            100% { transform: translateX(-10px) rotate(-5deg); }
+        }
+
+        .service-card:hover .security-icon {
+            animation-duration: 1.5s;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold text-center text-blue-800 mb-12">Security Services</h1>
+        
+        <div class="flex flex-wrap justify-center gap-8">
+            <!-- Security Guard -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="security-icon text-blue-800 mb-4 flex items-center gap-2">
+                        <i class="fas fa-shield-alt text-4xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Security Guard</h3>
+                    <p class="text-gray-600 text-center mb-4">Professional security personnel</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-blue-800 text-white px-6 py-2 rounded-lg hover:bg-blue-900 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/security+guard" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Building Maintenance -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="security-icon text-blue-800 mb-4">
+                        <i class="fas fa-wrench text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Building Maintenance</h3>
+                    <p class="text-gray-600 text-center mb-4">Technical maintenance expert</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-blue-800 text-white px-6 py-2 rounded-lg hover:bg-blue-900 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/building+maintenance" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Janitorial Staff -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="security-icon text-blue-800 mb-4">
+                        <i class="fas fa-broom text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Janitorial Staff</h3>
+                    <p class="text-gray-600 text-center mb-4">Professional cleaning services</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-blue-800 text-white px-6 py-2 rounded-lg hover:bg-blue-900 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/janitorial+services" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- CCTV Operator -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="security-icon text-blue-800 mb-4">
+                        <i class="fas fa-video text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">CCTV Operator</h3>
+                    <p class="text-gray-600 text-center mb-4">Surveillance system specialist</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-blue-800 text-white px-6 py-2 rounded-lg hover:bg-blue-900 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/cctv+operator" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

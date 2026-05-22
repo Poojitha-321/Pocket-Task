@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .service-card {
+            transition: all 0.4s ease;
+            transform-origin: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .fitness-icon {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .service-card:hover .fitness-icon {
+            animation-duration: 1s;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold text-center text-red-600 mb-12">Fitness Services</h1>
+        
+        <div class="flex flex-wrap justify-center gap-8">
+            <!-- Personal Trainer -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="fitness-icon text-red-600 mb-4 flex items-center gap-2">
+                        <i class="fas fa-dumbbell text-4xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Personal Trainer</h3>
+                    <p class="text-gray-600 text-center mb-4">Customized fitness coaching</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/personal+trainer" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Yoga Trainer -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="fitness-icon text-red-600 mb-4">
+                        <i class="fas fa-pray text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Yoga Trainer</h3>
+                    <p class="text-gray-600 text-center mb-4">Expert yoga instruction</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/yoga+trainer" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Sports Trainer -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="fitness-icon text-red-600 mb-4">
+                        <i class="fas fa-running text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Sports Trainer</h3>
+                    <p class="text-gray-600 text-center mb-4">Professional sports coaching</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/sports+trainer" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Gym Trainer -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="fitness-icon text-red-600 mb-4">
+                        <i class="fas fa-heartbeat text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Gym Trainer</h3>
+                    <p class="text-gray-600 text-center mb-4">Expert gym instruction</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/gym+trainer" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Equipment Handler -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="fitness-icon text-red-600 mb-4">
+                        <i class="fas fa-cogs text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Equipment Handler</h3>
+                    <p class="text-gray-600 text-center mb-4">Fitness equipment specialist</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/fitness+equipment" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

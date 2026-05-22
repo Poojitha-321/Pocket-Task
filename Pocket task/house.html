@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Household Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script>
+    <style>
+        .service-card {
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .icon-bounce {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .service-card:hover .icon-bounce {
+            animation-duration: 1s;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold text-center text-indigo-600 mb-12">Household Services</h1>
+        
+        <div class="flex flex-wrap justify-center gap-8">
+            <!-- Maid Service -->
+            <div class="service-card bg-white rounded-xl p-6 w-64 flex flex-col items-center">
+                <div class="icon-bounce text-indigo-600 mb-4">
+                    <i class="fas fa-broom text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Maid Service</h3>
+                <p class="text-gray-600 text-center mb-4">Professional home maintenance and cleaning</p>
+                <div class="button-group">
+                    <a href="register.html" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/maid+service" target="_blank" 
+                       class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cook -->
+            <div class="service-card bg-white rounded-xl p-6 w-64 flex flex-col items-center">
+                <div class="icon-bounce text-indigo-600 mb-4">
+                    <i class="fas fa-utensils text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Cook</h3>
+                <p class="text-gray-600 text-center mb-4">Expert chefs for your daily meals</p>
+                <div class="button-group">
+                    <a href="register.html" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/personal+chef" target="_blank" 
+                       class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Baby Sitter -->
+            <div class="service-card bg-white rounded-xl p-6 w-64 flex flex-col items-center">
+                <div class="icon-bounce text-indigo-600 mb-4">
+                    <i class="fas fa-baby text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Baby Sitter</h3>
+                <p class="text-gray-600 text-center mb-4">Caring and experienced child care</p>
+                <div class="button-group">
+                    <a href="register.html" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/baby+sitter" target="_blank" 
+                       class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- House Cleaner -->
+            <div class="service-card bg-white rounded-xl p-6 w-64 flex flex-col items-center">
+                <div class="icon-bounce text-indigo-600 mb-4">
+                    <i class="fas fa-spray-can text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">House Cleaner</h3>
+                <p class="text-gray-600 text-center mb-4">Deep cleaning and sanitization</p>
+                <div class="button-group">
+                    <a href="register.html" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/house+cleaning+service" target="_blank" 
+                       class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Laundry Worker -->
+            <div class="service-card bg-white rounded-xl p-6 w-64 flex flex-col items-center">
+                <div class="icon-bounce text-indigo-600 mb-4">
+                    <i class="fas fa-tshirt text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Laundry Worker</h3>
+                <p class="text-gray-600 text-center mb-4">Professional washing and ironing</p>
+                <div class="button-group">
+                    <a href="register.html" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/laundry+service" target="_blank" 
+                       class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Location
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

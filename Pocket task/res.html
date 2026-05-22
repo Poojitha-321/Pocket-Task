@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PocketTask - Resume Builder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-pink-400 via-purple-500 to-purple-600 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-purple-600">
+                        <i class="fas fa-file-alt mr-2"></i>Resume Builder
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-600 hover:text-purple-600">Home</a>
+                    <a href="login.html" class="text-gray-600 hover:text-purple-600">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white/10 backdrop-blur-lg rounded-xl p-8 shadow-lg">
+            <h1 class="text-4xl font-bold text-white mb-8 text-center">Create Your Professional Resume</h1>
+            
+            <form class="space-y-8" onsubmit="handleResumeSubmit(event)">
+                <!-- Personal Information -->
+                <div class="bg-white/5 p-6 rounded-lg">
+                    <h2 class="text-2xl font-semibold text-white mb-4">Personal Information</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-white text-sm font-medium mb-2">Full Name</label>
+                            <input type="text" class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        <div>
+                            <label class="block text-white text-sm font-medium mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        <div>
+                            <label class="block text-white text-sm font-medium mb-2">Phone</label>
+                            <input type="tel" class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        <div>
+                            <label class="block text-white text-sm font-medium mb-2">Location</label>
+                            <input type="text" class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500">
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Education -->
+                <div class="bg-white/5 p-6 rounded-lg">
+                    <h2 class="text-2xl font-semibold text-white mb-4">Education</h2>
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-white text-sm font-medium mb-2">School/University</label>
+                                <input type="text" class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500">
+                            </div>
+                            <div>
+                                <label class="block text-white text-sm font-medium mb-2">Degree</label>
+                                <input type="text" class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500">
+                            </div>
+                            <div>
+                                <label class="block text-white text-sm font-medium mb-2">Graduation Year</label>
+                                <input type="text" class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500">
+                            </div>
+                            <div>
+                                <label class="block text-white text-sm font-medium mb-2">GPA</label>
+                                <input type="text" class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500">
+                            </div>
+                        </div>
+                        <button type="button" class="text-purple-300 hover:text-purple-200">+ Add More Education</button>
+                    </div>
+                </div>
+            
+                <!-- Work Experience -->
+                <div class="bg-white/5 p-6 rounded-lg">
+                    <h2 class="text-2xl font-semibold text-white mb-4">Work Experience</h2>
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-white text-sm font-medium mb-2">Company</label>
+                                <input type="text" class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500">
+                            </div>
+                            <div>
+                                <label class="block text-white text-sm font-medium mb-2">Position</label>
+                                <input type="text" class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500">
+                            </div>
+                            <div>
+                                <label class="block text-white text-sm font-medium mb-2">Duration</label>
+                                <input type="text" class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500">
+                            </div>
+                            <div>
+                                <label class="block text-white text-sm font-medium mb-2">Location</label>
+                                <input type="text" class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-white text-sm font-medium mb-2">Responsibilities</label>
+                            <textarea class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500" rows="4"></textarea>
+                        </div>
+                        <button type="button" class="text-purple-300 hover:text-purple-200">+ Add More Experience</button>
+                    </div>
+                </div>
+            
+                <!-- Skills -->
+                <div class="bg-white/5 p-6 rounded-lg">
+                    <h2 class="text-2xl font-semibold text-white mb-4">Skills</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-white text-sm font-medium mb-2">Technical Skills</label>
+                            <input type="text" class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500" placeholder="e.g., Python, JavaScript, React">
+                        </div>
+                        <div>
+                            <label class="block text-white text-sm font-medium mb-2">Soft Skills</label>
+                            <input type="text" class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500" placeholder="e.g., Leadership, Communication">
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Submit Button -->
+                <div class="flex justify-center">
+                    <button type="submit" onclick="handleResumeCreation()" class="px-8 py-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-lg hover:from-pink-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+                        Generate Resume
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add matching animations -->
+    <style>
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+<!-- Add this div for resume preview at the end of the body, before the closing body tag -->
+<div id="resumePreview" class="fixed inset-0 bg-black/50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+        <button onclick="closePreview()" class="absolute top-4 right-4 text-gray-600 hover:text-gray-800">
+            <i class="fas fa-times text-xl"></i>
+        </button>
+        <div id="resumeContent"></div>
+        <div class="mt-6 flex justify-end gap-4">
+            <button onclick="closePreview()" class="px-4 py-2 text-gray-600 hover:text-gray-800">
+                Close
+            </button>
+            <button onclick="printResume()" class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700">
+                <i class="fas fa-print mr-2"></i>Print Resume
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Update the script section -->
+<script>
+    function handleResumeCreation() {
+        event.preventDefault();
+        
+        // Collect form data
+        const formData = {
+            fullName: document.querySelector('input[placeholder="Full Name"]').value,
+            email: document.querySelector('input[type="email"]').value,
+            phone: document.querySelector('input[type="tel"]').value,
+            location: document.querySelector('input[placeholder="Location"]').value,
+            education: {
+                school: document.querySelector('input[placeholder="School/University"]').value,
+                degree: document.querySelector('input[placeholder="Degree"]').value,
+                year: document.querySelector('input[placeholder="Graduation Year"]').value,
+                gpa: document.querySelector('input[placeholder="GPA"]').value
+            },
+            experience: {
+                company: document.querySelector('input[placeholder="Company"]').value,
+                position: document.querySelector('input[placeholder="Position"]').value,
+                duration: document.querySelector('input[placeholder="Duration"]').value,
+                responsibilities: document.querySelector('textarea').value
+            },
+            skills: {
+                technical: document.querySelector('input[placeholder="e.g., Python, JavaScript, React"]').value,
+                soft: document.querySelector('input[placeholder="e.g., Leadership, Communication"]').value
+            }
+        };
+
+        // Generate resume HTML
+        const resumeHTML = `
+            <div class="border-b-2 border-purple-600 pb-4 mb-6">
+                <h1 class="text-3xl font-bold text-purple-600">${formData.fullName}</h1>
+                <div class="mt-2 text-gray-600">
+                    <p>${formData.email} | ${formData.phone}</p>
+                    <p>${formData.location}</p>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold text-purple-600 mb-3">Education</h2>
+                <div class="mb-2">
+                    <div class="font-semibold">${formData.education.degree}</div>
+                    <div>${formData.education.school}</div>
+                    <div class="text-gray-600">Graduation Year: ${formData.education.year} | GPA: ${formData.education.gpa}</div>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold text-purple-600 mb-3">Work Experience</h2>
+                <div class="mb-4">
+                    <div class="font-semibold">${formData.experience.company}</div>
+                    <div>${formData.experience.position}</div>
+                    <div class="text-gray-600">${formData.experience.duration}</div>
+                    <p class="mt-1">${formData.experience.responsibilities}</p>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-semibold text-purple-600 mb-3">Skills</h2>
+                <div class="mb-2">
+                    <div class="font-semibold">Technical Skills</div>
+                    <p>${formData.skills.technical}</p>
+                </div>
+                <div>
+                    <div class="font-semibold">Soft Skills</div>
+                    <p>${formData.skills.soft}</p>
+                </div>
+            </div>
+        `;
+
+        // Display the resume
+        document.getElementById('resumeContent').innerHTML = resumeHTML;
+        document.getElementById('resumePreview').classList.remove('hidden');
+        document.getElementById('resumePreview').classList.add('flex');
+
+        // Add coins for creating resume
+        addCoins(20);
+        showNotification('Resume Created! 📄', 'You earned 20 coins for creating a resume!');
+    }
+
+    function closePreview() {
+        document.getElementById('resumePreview').classList.add('hidden');
+        document.getElementById('resumePreview').classList.remove('flex');
+    }
+
+    function printResume() {
+        const printContent = document.getElementById('resumeContent').innerHTML;
+        const printWindow = window.open('', '', 'height=600,width=800');
+        printWindow.document.write(`
+            <html>
+                <head>
+                    <title>Resume</title>
+                    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+                </head>
+                <body class="p-8">
+                    ${printContent}
+                </body>
+            </html>
+        `);
+        printWindow.document.close();
+        printWindow.focus();
+        setTimeout(() => {
+            printWindow.print();
+            printWindow.close();
+        }, 250);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catering Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .service-card {
+            transition: all 0.4s ease;
+            transform-origin: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .chef-icon {
+            animation: cooking 3s infinite;
+        }
+
+        @keyframes cooking {
+            0% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+            100% { transform: rotate(-5deg); }
+        }
+
+        .service-card:hover .chef-icon {
+            animation-duration: 1.5s;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold text-center text-red-600 mb-12">Catering Services</h1>
+        
+        <div class="flex flex-wrap justify-center gap-8">
+            <!-- Head Chef -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="chef-icon text-red-600 mb-4 flex items-center gap-2">
+                    <i class="fas fa-user-chef text-4xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Head Chef</h3>
+                <p class="text-gray-600 text-center mb-4">Expert culinary professional with leadership skills</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/chef+jobs" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Sous Chef -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="chef-icon text-red-600 mb-4">
+                    <i class="fas fa-utensils text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Sous Chef</h3>
+                <p class="text-gray-600 text-center mb-4">Second in command kitchen professional</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/sous+chef+jobs" target="_blank" 
+                       class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Waiter -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="chef-icon text-red-600 mb-4">
+                    <i class="fas fa-concierge-bell text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Waiter</h3>
+                <p class="text-gray-600 text-center mb-4">Professional food service staff</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/waiter+jobs" target="_blank" 
+                       class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Assistant Chef -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="chef-icon text-red-600 mb-4">
+                    <i class="fas fa-kitchen-set text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Assistant Chef</h3>
+                <p class="text-gray-600 text-center mb-4">Kitchen support professional</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/assistant+chef+jobs" target="_blank" 
+                       class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Dish Washer -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="chef-icon text-red-600 mb-4">
+                    <i class="fas fa-sink text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Dish Washer</h3>
+                <p class="text-gray-600 text-center mb-4">Kitchen cleaning specialist</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/dishwasher+jobs" target="_blank" 
+                       class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Location
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

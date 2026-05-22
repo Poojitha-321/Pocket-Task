@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .service-card {
+            transition: all 0.4s ease;
+            transform-origin: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .media-icon {
+            animation: float 3s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+
+        .service-card:hover .media-icon {
+            animation-duration: 1.5s;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold text-center text-purple-600 mb-12">Media Services</h1>
+        
+        <div class="flex flex-wrap justify-center gap-8">
+            <!-- Content Writer -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="media-icon text-purple-600 mb-4 flex items-center gap-2">
+                    <i class="fas fa-pen-fancy text-4xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Content Writer</h3>
+                <p class="text-gray-600 text-center mb-4">Professional content creation</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/content+writer" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Video Editor -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="media-icon text-purple-600 mb-4">
+                    <i class="fas fa-video text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Video Editor</h3>
+                <p class="text-gray-600 text-center mb-4">Expert video editing services</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/video+editor" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Social Media Manager -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="media-icon text-purple-600 mb-4">
+                    <i class="fas fa-hashtag text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Social Media Manager</h3>
+                <p class="text-gray-600 text-center mb-4">Strategic social media management</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/social+media+manager" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Photographer -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="media-icon text-purple-600 mb-4">
+                    <i class="fas fa-camera text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Photographer</h3>
+                <p class="text-gray-600 text-center mb-4">Professional photography services</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/photographer" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Graphic Designer -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="media-icon text-purple-600 mb-4">
+                    <i class="fas fa-palette text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Graphic Designer</h3>
+                <p class="text-gray-600 text-center mb-4">Creative design solutions</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/graphic+designer" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

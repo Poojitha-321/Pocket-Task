@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transportation Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Add this to existing styles */
+        .rickshaw-icon::before {
+            content: '\f1b9';  /* Car icon as fallback */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+        }
+        .service-card {
+            transition: all 0.4s ease;
+            transform-origin: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .vehicle-icon {
+            animation: drive 3s infinite;
+        }
+
+        @keyframes drive {
+            0% { transform: translateX(-20px); }
+            50% { transform: translateX(20px); }
+            100% { transform: translateX(-20px); }
+        }
+
+        .service-card:hover .vehicle-icon {
+            animation-duration: 1.5s;
+        }
+
+        .auto-rickshaw {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .auto-rickshaw::before {
+            content: '';
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold text-center text-blue-600 mb-12">Transportation Services</h1>
+        
+        <div class="flex flex-wrap justify-center gap-8">
+            <!-- Auto Rickshaw with updated icon -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="vehicle-icon text-blue-600 mb-4">
+                    <span class="auto-rickshaw text-4xl">
+                        <i class="fas fa-car"></i>
+                    </span>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Auto Rickshaw</h3>
+                <p class="text-gray-600 text-center mb-4">Affordable local transportation</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/auto+rickshaw" target="_blank" 
+                       class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cab -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="vehicle-icon text-blue-600 mb-4">
+                    <i class="fas fa-car text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Cab Service</h3>
+                <p class="text-gray-600 text-center mb-4">Comfortable city transportation</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/cab+service" target="_blank" 
+                       class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Taxi -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="vehicle-icon text-blue-600 mb-4">
+                    <i class="fas fa-taxi text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Taxi</h3>
+                <p class="text-gray-600 text-center mb-4">24/7 taxi transportation</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/taxi" target="_blank" 
+                       class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Truck -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="vehicle-icon text-blue-600 mb-4">
+                    <i class="fas fa-truck text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Truck Service</h3>
+                <p class="text-gray-600 text-center mb-4">Heavy goods transportation</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/truck+service" target="_blank" 
+                       class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Delivery Boy -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="vehicle-icon text-blue-600 mb-4">
+                    <i class="fas fa-motorcycle text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Delivery Service</h3>
+                <p class="text-gray-600 text-center mb-4">Fast and reliable delivery</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/delivery+service" target="_blank" 
+                       class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Loaders/Unloaders -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="vehicle-icon text-blue-600 mb-4">
+                    <i class="fas fa-people-carry text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Loading Service</h3>
+                <p class="text-gray-600 text-center mb-4">Professional loading/unloading</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/loading+service" target="_blank" 
+                       class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Location
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

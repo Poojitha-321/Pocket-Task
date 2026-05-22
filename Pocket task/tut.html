@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoring Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .service-card {
+            transition: all 0.4s ease;
+            transform-origin: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .tutor-icon {
+            animation: float 3s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-10px) rotate(5deg); }
+            66% { transform: translateY(5px) rotate(-5deg); }
+        }
+
+        .service-card:hover .tutor-icon {
+            animation-duration: 1.5s;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-violet-50 to-indigo-50">
+    <div class="container mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold text-center text-violet-600 mb-12">Private Tutoring Services</h1>
+        
+        <div class="flex flex-wrap justify-center gap-8">
+            <!-- Mathematics card remains the same -->
+            <!-- Geography -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="tutor-icon text-violet-600 mb-4">
+                        <i class="fas fa-globe-americas text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Geography</h3>
+                    <p class="text-gray-600 text-center mb-4">World Geography Tutoring</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-violet-600 text-white px-6 py-2 rounded-lg hover:bg-violet-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/geography+tutor" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Civics -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="tutor-icon text-violet-600 mb-4">
+                        <i class="fas fa-balance-scale text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Civics</h3>
+                    <p class="text-gray-600 text-center mb-4">Civics Education Tutoring</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-violet-600 text-white px-6 py-2 rounded-lg hover:bg-violet-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/civics+tutor" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hindi -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="tutor-icon text-violet-600 mb-4">
+                        <i class="fas fa-language text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Hindi</h3>
+                    <p class="text-gray-600 text-center mb-4">Hindi Language Tutoring</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-violet-600 text-white px-6 py-2 rounded-lg hover:bg-violet-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/hindi+tutor" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- English -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="tutor-icon text-violet-600 mb-4">
+                        <i class="fas fa-book text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">English</h3>
+                    <p class="text-gray-600 text-center mb-4">English Language Tutoring</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-violet-600 text-white px-6 py-2 rounded-lg hover:bg-violet-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/english+tutor" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Physics -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="tutor-icon text-violet-600 mb-4">
+                        <i class="fas fa-atom text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Physics</h3>
+                    <p class="text-gray-600 text-center mb-4">Physics Tutoring</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-violet-600 text-white px-6 py-2 rounded-lg hover:bg-violet-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/physics+tutor" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Chemistry -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="tutor-icon text-violet-600 mb-4">
+                        <i class="fas fa-flask text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Chemistry</h3>
+                    <p class="text-gray-600 text-center mb-4">Chemistry Tutoring</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-violet-600 text-white px-6 py-2 rounded-lg hover:bg-violet-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/chemistry+tutor" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Biology -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="tutor-icon text-violet-600 mb-4">
+                        <i class="fas fa-dna text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Biology</h3>
+                    <p class="text-gray-600 text-center mb-4">Biology Tutoring</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-violet-600 text-white px-6 py-2 rounded-lg hover:bg-violet-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/biology+tutor" target="_blank" 
+                       class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

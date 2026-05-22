@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder - PocketTask</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-center text-indigo-600 mb-8">Resume Builder</h1>
+        
+        <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6">
+            <form id="resumeForm" class="space-y-6">
+                <!-- Personal Information -->
+                <div class="space-y-4">
+                    <h2 class="text-xl font-semibold text-gray-800">Personal Information</h2>
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="text" id="fullName" placeholder="Full Name" class="p-2 border rounded">
+                        <input type="email" id="email" placeholder="Email" class="p-2 border rounded">
+                        <input type="tel" id="phone" placeholder="Phone" class="p-2 border rounded">
+                        <input type="text" id="location" placeholder="Location" class="p-2 border rounded">
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="space-y-4">
+                    <h2 class="text-xl font-semibold text-gray-800">Education</h2>
+                    <div id="educationFields" class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <input type="text" placeholder="Degree" class="p-2 border rounded education-degree">
+                            <input type="text" placeholder="Institution" class="p-2 border rounded education-institution">
+                            <input type="text" placeholder="Year" class="p-2 border rounded education-year">
+                            <input type="text" placeholder="GPA" class="p-2 border rounded education-gpa">
+                        </div>
+                    </div>
+                    <button type="button" onclick="addEducation()" class="text-indigo-600 hover:text-indigo-800">
+                        + Add More Education
+                    </button>
+                </div>
+
+                <!-- Experience -->
+                <div class="space-y-4">
+                    <h2 class="text-xl font-semibold text-gray-800">Work Experience</h2>
+                    <div id="experienceFields" class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <input type="text" placeholder="Company" class="p-2 border rounded experience-company">
+                            <input type="text" placeholder="Position" class="p-2 border rounded experience-position">
+                            <input type="text" placeholder="Duration" class="p-2 border rounded experience-duration">
+                            <textarea placeholder="Responsibilities" class="p-2 border rounded experience-responsibilities"></textarea>
+                        </div>
+                    </div>
+                    <button type="button" onclick="addExperience()" class="text-indigo-600 hover:text-indigo-800">
+                        + Add More Experience
+                    </button>
+                </div>
+
+                <!-- Skills -->
+                <div class="space-y-4">
+                    <h2 class="text-xl font-semibold text-gray-800">Skills</h2>
+                    <textarea id="skills" placeholder="Enter your skills (comma separated)" class="w-full p-2 border rounded"></textarea>
+                </div>
+
+                <button type="button" onclick="generateResume()" class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700">
+                    Generate Resume
+                </button>
+            </form>
+        </div>
+
+        <!-- Resume Preview (Hidden by default) -->
+        <div id="resumePreview" class="hidden max-w-4xl mx-auto mt-8 bg-white rounded-lg shadow-lg p-6">
+            <!-- Resume content will be inserted here -->
+        </div>
+    </div>
+
+    <script>
+        function addEducation() {
+            const educationFields = document.getElementById('educationFields');
+            const newEducation = educationFields.children[0].cloneNode(true);
+            Array.from(newEducation.getElementsByTagName('input')).forEach(input => input.value = '');
+            educationFields.appendChild(newEducation);
+        }
+
+        function addExperience() {
+            const experienceFields = document.getElementById('experienceFields');
+            const newExperience = experienceFields.children[0].cloneNode(true);
+            Array.from(newExperience.getElementsByTagName('input')).forEach(input => input.value = '');
+            Array.from(newExperience.getElementsByTagName('textarea')).forEach(textarea => textarea.value = '');
+            experienceFields.appendChild(newExperience);
+        }
+
+        function generateResume() {
+            const preview = document.getElementById('resumePreview');
+            const name = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const location = document.getElementById('location').value;
+            const skills = document.getElementById('skills').value;
+
+            let educationHTML = '';
+            document.querySelectorAll('.education-degree').forEach((degree, index) => {
+                if (degree.value) {
+                    educationHTML += `
+                        <div class="mb-2">
+                            <div class="font-semibold">${degree.value}</div>
+                            <div>${document.querySelectorAll('.education-institution')[index].value}</div>
+                            <div class="text-gray-600">${document.querySelectorAll('.education-year')[index].value} | GPA: ${document.querySelectorAll('.education-gpa')[index].value}</div>
+                        </div>
+                    `;
+                }
+            });
+
+            let experienceHTML = '';
+            document.querySelectorAll('.experience-company').forEach((company, index) => {
+                if (company.value) {
+                    experienceHTML += `
+                        <div class="mb-4">
+                            <div class="font-semibold">${company.value}</div>
+                            <div>${document.querySelectorAll('.experience-position')[index].value}</div>
+                            <div class="text-gray-600">${document.querySelectorAll('.experience-duration')[index].value}</div>
+                            <p class="mt-1">${document.querySelectorAll('.experience-responsibilities')[index].value}</p>
+                        </div>
+                    `;
+                }
+            });
+
+            preview.innerHTML = `
+                <div class="border-b-2 border-indigo-600 pb-4 mb-6">
+                    <h1 class="text-3xl font-bold text-indigo-600">${name}</h1>
+                    <div class="mt-2 text-gray-600">
+                        <p>${email} | ${phone}</p>
+                        <p>${location}</p>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h2 class="text-xl font-semibold text-indigo-600 mb-3">Education</h2>
+                    ${educationHTML}
+                </div>
+
+                <div class="mb-6">
+                    <h2 class="text-xl font-semibold text-indigo-600 mb-3">Work Experience</h2>
+                    ${experienceHTML}
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-semibold text-indigo-600 mb-3">Skills</h2>
+                    <p>${skills.split(',').map(skill => skill.trim()).join(' • ')}</p>
+                </div>
+
+                <div class="mt-6 flex justify-end">
+                    <button onclick="window.print()" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
+                        <i class="fas fa-print mr-2"></i>Print Resume
+                    </button>
+                </div>
+            `;
+
+            preview.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>

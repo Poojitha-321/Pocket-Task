@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PocketTask - Find Local Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Add this after your existing CSS links -->
+    <style>
+        .notification-popup {
+            position: fixed;    
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .notification-popup.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .notification-popup i {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-indigo-600">PocketTask</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <!-- Add this notification div after the body tag -->
+                    <div id="notification" class="notification-popup">
+                        <i class="fas fa-coins"></i>
+                        <span id="notificationText"></span>
+                    </div>
+                    
+                    <!-- Update the coin display section -->
+                    <a href="wallet.html" class="flex items-center space-x-2 bg-indigo-100 px-4 py-2 rounded-lg hover:bg-indigo-200">
+                        <i class="fas fa-coins text-yellow-500"></i>
+                        <span id="coinDisplay" class="text-indigo-600 font-semibold">0</span>
+                    </a>
+                    
+                    <!-- Profile section that toggles between login and user profile -->
+                    <div id="profileSection" class="relative">
+                        <!-- Login link (shown when not logged in) -->
+                        <a id="loginLink" href="login.html" class="text-gray-600 hover:text-indigo-600 flex items-center">
+                            <i class="fas fa-user mr-2"></i>
+                            <span>Login</span>
+                        </a>
+                        
+                        <!-- Profile dropdown (shown when logged in) -->
+                        <div id="profileDropdown" class="hidden">
+                            <button id="profileButton" class="flex items-center space-x-2 text-gray-600 hover:text-indigo-600 focus:outline-none">
+                                <div class="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white">
+                                    <span id="userInitials">JD</span>
+                                </div>
+                                <span id="userName">John Doe</span>
+                                <i class="fas fa-chevron-down text-xs ml-1"></i>
+                            </button>
+                            
+                            <!-- Dropdown menu -->
+                            <div id="dropdownMenu" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 hidden">
+                                <a href="profile.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100">
+                                    <i class="fas fa-user-circle mr-2"></i> My Profile
+                                </a>
+                                <a href="settings.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100">
+                                    <i class="fas fa-cog mr-2"></i> Settings
+                                </a>
+                                <a href="orders.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100">
+                                    <i class="fas fa-list mr-2"></i> My Orders
+                                </a>
+                                <div class="border-t border-gray-100"></div>
+                                <a href="#" onclick="handleLogout()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100">
+                                    <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="post.html" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700">
+                        Post a Job
+                    </a>
+                    <!-- Update the resume builder link -->
+                    <a href="resume.html" class="text-gray-600 hover:text-indigo-600">
+                        <i class="fas fa-file-alt mr-1"></i>Resume Builder
+                    </a>
+                    <a href="tel:1800-123-4567" class="text-gray-600 hover:text-indigo-600 flex items-center">
+                        <i class="fas fa-phone-alt mr-2"></i>
+                        <span>1800-123-4567</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-4">Find the Perfect Service Provider</h2>
+            <p class="text-xl mb-8">Connect with skilled professionals through PocketTask</p>
+            <!-- Add this to your existing style section -->
+            <style>
+                .search-container {
+                    position: relative;
+                    display: flex;
+                    gap: 1rem;
+                }
+            .domain-sidebar {
+                display: none;
+                position: absolute;
+                left: -250px;
+                top: 0;
+                width: 240px;
+                background: white;
+                border-radius: 0.5rem;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+                max-height: 400px;
+                overflow-y: auto;
+            }
+            .domain-sidebar.active {
+                display: block;
+            }
+            .category-dropdown {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                border-radius: 0.5rem;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+                max-height: 300px;
+                overflow-y: auto;
+                z-index: 50;
+            }
+            .category-dropdown.active {
+                display: block;
+            }
+            .search-result-item {
+                color: #1f2937;
+                padding: 0.5rem 1rem;
+                cursor: pointer;
+            }
+            .search-result-item:hover {
+                background-color: #f3f4f6;
+            }
+            </style>
+            <!-- Update the search bar section -->
+            <!-- Update the search container in the Hero Section -->
+            <div class="max-w-3xl mx-auto relative">
+                <div class="search-container">
+                    <div class="flex-1">
+                        <div class="flex gap-4 bg-white rounded-lg p-2">
+                            <input type="text" 
+                                   id="searchInput" 
+                                   placeholder="What service are you looking for?" 
+                                   class="flex-1 px-4 py-2 rounded-md text-gray-900 focus:outline-none"
+                                   oninput="filterServices(this.value)">
+                            <button onclick="handleSearch()" class="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700">
+                                Search
+                            </button>
+                        </div>
+                        <div id="searchResults" class="absolute w-full bg-white mt-2 rounded-lg shadow-lg max-h-96 overflow-y-auto z-50 hidden">
+                            <!-- Search results will appear here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Add this script before the closing body tag -->
+            <script>
+                const services = [
+                    { name: 'Teaching', description: 'Professional teaching services', url: 'tech.html', icon: 'fa-chalkboard-teacher' },
+                    { name: 'Tutoring', description: 'Private tutoring services', url: 'tut.html', icon: 'fa-book-reader' },
+                    { name: 'Software Training', description: 'Programming & development courses', url: 'softtut.html', icon: 'fa-laptop-code' },
+                    { name: 'Healthcare', description: 'Medical & healthcare services', url: 'health.html', icon: 'fa-heartbeat' },
+                    { name: 'Fitness', description: 'Personal training & fitness', url: 'fit.html', icon: 'fa-dumbbell' },
+                    { name: 'Housing', description: 'Property & real estate services', url: 'house.html', icon: 'fa-home' },
+                    { name: 'Transport', description: 'Transportation & logistics', url: 'transport.html', icon: 'fa-truck' },
+                    { name: 'Professional Services', description: 'Professional services', url: 'prof.html', icon: 'fa-briefcase' },
+                    { name: 'Media Services', description: 'Media & entertainment', url: 'media.html', icon: 'fa-photo-video' },
+                    { name: 'Event Planning', description: 'Event planning & management', url: 'event.html', icon: 'fa-calendar-alt' },
+                    { name: 'Construction & Repairs', description: 'Construction & repairs', url: 'consrep.html', icon: 'fa-tools' },
+                    { name: 'Banking Services', description: 'Financial services', url: 'bank.html', icon: 'fa-piggy-bank' },
+                    { name: 'Art & Design', description: 'Creative services', url: 'art.html', icon: 'fa-palette' },
+                    { name: 'Pet Services', description: 'Pet care & veterinary services', url: 'pet.html', icon: 'fa-paw' }
+                ];
+
+                function filterServices(searchTerm) {
+                    const resultsDiv = document.getElementById('searchResults');
+                    if (!searchTerm) {
+                        resultsDiv.classList.add('hidden');
+                        return;
+                    }
+
+                    const filteredServices = services.filter(service => 
+                        service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                        service.description.toLowerCase().includes(searchTerm.toLowerCase())
+                    );
+
+                    if (filteredServices.length > 0) {
+                        resultsDiv.innerHTML = filteredServices.map(service => `
+                            <a href="${service.url}" class="flex items-center p-3 hover:bg-gray-100 transition-colors">
+                                <div class="text-indigo-600 mr-4">
+                                    <i class="fas ${service.icon} text-2xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-gray-800">${service.name}</div>
+                                    <div class="text-sm text-gray-600">${service.description}</div>
+                                </div>
+                            </a>
+                        `).join('');
+                        resultsDiv.classList.remove('hidden');
+                    } else {
+                        resultsDiv.innerHTML = `
+                            <div class="p-4 text-center text-gray-600">
+                                <i class="fas fa-search mb-2 text-2xl"></i>
+                                <p>No services found matching "${searchTerm}"</p>
+                            </div>
+                        `;
+                        resultsDiv.classList.remove('hidden');
+                    }
+                }
+
+                // Close search results when clicking outside
+                document.addEventListener('click', (e) => {
+                    const searchResults = document.getElementById('searchResults');
+                    const searchInput = document.getElementById('searchInput');
+                    if (!searchResults.contains(e.target) && !searchInput.contains(e.target)) {
+                        searchResults.classList.add('hidden');
+                    }
+                });
+
+                function handleSearch() {
+                    const searchTerm = document.getElementById('searchInput').value;
+                    const resultsDiv = document.getElementById('searchResults');
+                    if (!resultsDiv.classList.contains('hidden')) {
+                        const firstResult = resultsDiv.querySelector('a');
+                        if (firstResult) {
+                            window.location.href = firstResult.href;
+                        }
+                    }
+                }
+            </script>
+        </div>
+    </div>
+
+    <!-- Service Categories -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h3 class="text-2xl font-bold text-gray-800 mb-8">Service Categories</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Education Services -->
+            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 p-6">
+                <a href="tech.html" class="block">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-chalkboard-teacher text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Teaching</h4>
+                    <p class="text-gray-600">Professional teaching services</p>
+                </a>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 p-6">
+                <a href="tut.html" class="block">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-book-reader text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Tutoring</h4>
+                    <p class="text-gray-600">Private tutoring services</p>
+                </a>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 p-6">
+                <a href="softtut.html" class="block">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-laptop-code text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Software Training</h4>
+                    <p class="text-gray-600">Programming & development courses</p>
+                </a>
+            </div>
+
+            <!-- Health & Fitness -->
+            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 p-6">
+                <a href="health.html" class="block">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-heartbeat text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Healthcare</h4>
+                    <p class="text-gray-600">Medical & healthcare services</p>
+                </a>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 p-6">
+                <a href="fit.html" class="block">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-dumbbell text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Fitness</h4>
+                    <p class="text-gray-600">Personal training & fitness</p>
+                </a>
+            </div>
+
+            <!-- Property & Transport -->
+            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 p-6">
+                <a href="house.html" class="block">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-home text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Housing</h4>
+                    <p class="text-gray-600">Property & real estate services</p>
+                </a>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 p-6">
+                <a href="transport.html" class="block">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-truck text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Transport</h4>
+                    <p class="text-gray-600">Transportation & logistics</p>
+                </a>
+            </div>
+
+            <!-- Professional Services -->
+            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 p-6">
+                <a href="prof.html" class="block">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-briefcase text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Professional</h4>
+                    <p class="text-gray-600">Professional services</p>
+                </a>
+            </div>
+
+            <!-- Media & Events -->
+            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 p-6">
+                <a href="media.html" class="block">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-photo-video text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Media</h4>
+                    <p class="text-gray-600">Media & entertainment</p>
+                </a>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 p-6">
+                <a href="event.html" class="block">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-calendar-alt text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Events</h4>
+                    <p class="text-gray-600">Event planning & management</p>
+                </a>
+            </div>
+
+            <!-- Additional Services -->
+            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 p-6">
+                <a href="consrep.html" class="block">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-tools text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Repairs</h4>
+                    <p class="text-gray-600">Construction & repairs</p>
+                </a>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 p-6">
+                <a href="bank.html" class="block">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-piggy-bank text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Banking</h4>
+                    <p class="text-gray-600">Financial services</p>
+                </a>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 p-6">
+                <a href="art.html" class="block">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-palette text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Art & Design</h4>
+                    <p class="text-gray-600">Creative services</p>
+                </a>
+            </div>
+            <!-- Pet Services -->
+            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 p-6">
+                <a href="pet.html" class="block">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-paw text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Pet Services</h4>
+                    <p class="text-gray-600">Pet care & veterinary services</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">PocketTask</h4>
+                    <p class="text-gray-400">Find trusted professionals for all your service needs</p>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Quick Links</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Professionals</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <!-- Services section without contact button -->
+                    <div>
+                        <h5 class="font-semibold mb-4">Services</h5>
+                        <ul class="space-y-2">
+                            <li><a href="catering.html"></a>
+                                 class="text-gray-400 hover:text-white">Catering</a></li>
+                            <li><a href="catering.html" class="text-gray-400 hover:text-white">Construction</a></li>
+                            <li><a href="pet.html" class="text-gray-400 hover:text-white">Pet Care</a></li>
+                            <li><a href="health.html" class="text-gray-400 hover:text-white">More Services</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Connect With Us</h5>
+                    <div class="space-y-2">
+                        <p class="text-gray-400">
+                            <i class="fas fa-phone mr-2"></i>
+                            <a href="tel:8247362509" class="hover:text-white">8247362509</a>
+                        </p>
+                        <p class="text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <a href="mailto:mr.habeeb009@gmail.com" class="hover:text-white">mr.habeeb009@gmail.com</a>
+                        </p>
+                        <div class="flex space-x-4 mt-4">
+                            <!-- Social media icons remain the same -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Remove the duplicate script tags and organize the audio and notification code -->
+    <audio id="welcomeSound" src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3"></audio>
+
+    <script>
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            const notificationText = document.getElementById('notificationText');
+            const welcomeSound = document.getElementById('welcomeSound');
+            
+            notificationText.textContent = message;
+            notification.classList.add('show');
+            
+            // Play welcome sound
+            welcomeSound.play();
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        function updateCoinDisplay() {
+            const coins = parseInt(localStorage.getItem('userCoins')) || 0;
+            const coinDisplay = document.getElementById('coinDisplay');
+            if (coinDisplay) {
+                coinDisplay.textContent = coins;
+            }
+        }
+
+        // Check if user is logged in
+        function checkLoginStatus() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            const userName = localStorage.getItem('userName') || 'User';
+            
+            const loginLink = document.getElementById('loginLink');
+            const profileDropdown = document.getElementById('profileDropdown');
+            
+            if (isLoggedIn) {
+                // Hide login link, show profile
+                loginLink.classList.add('hidden');
+                profileDropdown.classList.remove('hidden');
+                
+                // Update profile information
+                document.getElementById('userName').textContent = userName;
+                
+                // Set user initials
+                const nameParts = userName.split(' ');
+                let initials = '';
+                if (nameParts.length >= 2) {
+                    initials = nameParts[0].charAt(0) + nameParts[1].charAt(0);
+                } else {
+                    initials = nameParts[0].charAt(0);
+                }
+                document.getElementById('userInitials').textContent = initials.toUpperCase();
+            } else {
+                // Show login link, hide profile
+                loginLink.classList.remove('hidden');
+                profileDropdown.classList.add('hidden');
+            }
+        }
+        
+        // Toggle dropdown menu
+        function setupProfileDropdown() {
+            const profileButton = document.getElementById('profileButton');
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            
+            if (profileButton) {
+                profileButton.addEventListener('click', () => {
+                    dropdownMenu.classList.toggle('hidden');
+                });
+                
+                // Close dropdown when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!profileButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                        dropdownMenu.classList.add('hidden');
+                    }
+                });
+            }
+        }
+        
+        // Handle logout
+        function handleLogout() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.setItem('justLoggedOut', 'true');
+            window.location.reload();
+        }
+
+        // Update coins when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCoinDisplay();
+            checkLoginStatus();
+            setupProfileDropdown();
+            
+            // Check if user just logged in
+            const justLoggedIn = localStorage.getItem('justLoggedIn');
+            if (justLoggedIn === 'true') {
+                showNotification('Welcome to PocketTask! +1 coin added');
+                localStorage.removeItem('justLoggedIn');
+            }
+            
+            // Check if user just logged out
+            const justLoggedOut = localStorage.getItem('justLoggedOut');
+            if (justLoggedOut === 'true') {
+                showNotification('You have been logged out successfully');
+                localStorage.removeItem('justLoggedOut');
+            }
+        });
+
+        // Update display periodically
+        setInterval(updateCoinDisplay, 1000);
+    </script>
+</body>
+</html>

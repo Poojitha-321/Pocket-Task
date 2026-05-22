@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction & Repair Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .service-card {
+            transition: all 0.4s ease;
+            transform-origin: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .tool-icon {
+            animation: toolWiggle 3s infinite;
+        }
+
+        @keyframes toolWiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-15deg); }
+            75% { transform: rotate(15deg); }
+        }
+
+        .service-card:hover .tool-icon {
+            animation-duration: 1.5s;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold text-center text-orange-600 mb-12">Construction & Repair Services</h1>
+        
+        <div class="flex flex-wrap justify-center gap-8">
+            <!-- Mason -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="tool-icon text-orange-600 mb-4">
+                    <i class="fas fa-hard-hat text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Mason</h3>
+                <p class="text-gray-600 text-center mb-4">Expert in brick, stone, and concrete work</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/masonry+services" target="_blank" 
+                       class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Carpenter -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="tool-icon text-orange-600 mb-4">
+                    <i class="fas fa-hammer text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Carpenter</h3>
+                <p class="text-gray-600 text-center mb-4">Custom woodwork and furniture solutions</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/carpenter" target="_blank" 
+                       class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Electrician -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="tool-icon text-orange-600 mb-4">
+                    <i class="fas fa-bolt text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Electrician</h3>
+                <p class="text-gray-600 text-center mb-4">Professional electrical installation and repair</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/electrician" target="_blank" 
+                       class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Plumber -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="tool-icon text-orange-600 mb-4">
+                    <i class="fas fa-wrench text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Plumber</h3>
+                <p class="text-gray-600 text-center mb-4">Expert plumbing solutions and repairs</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/plumber" target="_blank" 
+                       class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Painter -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="tool-icon text-orange-600 mb-4">
+                    <i class="fas fa-paint-roller text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Painter</h3>
+                <p class="text-gray-600 text-center mb-4">Professional painting and finishing</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/painter" target="_blank" 
+                       class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Welder -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="tool-icon text-orange-600 mb-4">
+                    <i class="fas fa-fire text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Welder</h3>
+                <p class="text-gray-600 text-center mb-4">Metal fabrication and welding services</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/welder" target="_blank" 
+                       class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Roofer -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center">
+                <div class="tool-icon text-orange-600 mb-4">
+                    <i class="fas fa-home text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Roofer</h3>
+                <p class="text-gray-600 text-center mb-4">Roofing installation and repairs</p>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/roofing+services" target="_blank" 
+                       class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Location
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

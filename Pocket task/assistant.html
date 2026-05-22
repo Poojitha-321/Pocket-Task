@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PocketTask AI Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .chat-container {
+            height: calc(100vh - 200px);
+        }
+        .message {
+            max-width: 80%;
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            border-radius: 20px;
+        }
+        .user-message {
+            background-color: #6366f1;
+            color: white;
+            margin-left: auto;
+            border-bottom-right-radius: 5px;
+        }
+        .ai-message {
+            background-color: #f3f4f6;
+            color: #1f2937;
+            margin-right: auto;
+            border-bottom-left-radius: 5px;
+        }
+        .typing-indicator {
+            display: inline-block;
+        }
+        .typing-indicator span {
+            height: 10px;
+            width: 10px;
+            float: left;
+            margin: 0 1px;
+            background-color: #9ca3af;
+            display: block;
+            border-radius: 50%;
+            opacity: 0.4;
+        }
+        .typing-indicator span:nth-of-type(1) {
+            animation: 1s blink infinite 0.3333s;
+        }
+        .typing-indicator span:nth-of-type(2) {
+            animation: 1s blink infinite 0.6666s;
+        }
+        .typing-indicator span:nth-of-type(3) {
+            animation: 1s blink infinite 0.9999s;
+        }
+        @keyframes blink {
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-indigo-600">PocketTask</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-600 hover:text-indigo-600">
+                        <i class="fas fa-home mr-2"></i>
+                        <span>Home</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <div class="bg-white rounded-xl shadow-md p-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">PocketTask AI Assistant</h2>
+            
+            <div id="chatContainer" class="chat-container overflow-y-auto mb-6 p-4 border border-gray-200 rounded-lg">
+                <div class="message ai-message">
+                    <p>Hello! I'm your PocketTask AI assistant. How can I help you today?</p>
+                </div>
+                <!-- Messages will appear here -->
+            </div>
+            
+            <div class="flex gap-4">
+                <input type="text" id="userInput" placeholder="Ask me anything about services..." 
+                       class="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <button id="sendButton" class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors">
+                    <i class="fas fa-paper-plane mr-2"></i>Send
+                </button>
+            </div>
+            
+            <div class="mt-6">
+                <h3 class="text-lg font-semibold text-gray-700 mb-2">Suggested Questions:</h3>
+                <div class="flex flex-wrap gap-2">
+                    <button class="suggestion-btn bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-lg transition-colors">
+                        What services do you offer?
+                    </button>
+                    <button class="suggestion-btn bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-lg transition-colors">
+                        How much do services cost?
+                    </button>
+                    <button class="suggestion-btn bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-lg transition-colors">
+                        Can you help me find a tutor?
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const chatContainer = document.getElementById('chatContainer');
+            const userInput = document.getElementById('userInput');
+            const sendButton = document.getElementById('sendButton');
+            const suggestionBtns = document.querySelectorAll('.suggestion-btn');
+            
+            // Function to add a message to the chat
+            function addMessage(message, isUser = false) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message');
+                messageDiv.classList.add(isUser ? 'user-message' : 'ai-message');
+                messageDiv.innerHTML = `<p>${message}</p>`;
+                chatContainer.appendChild(messageDiv);
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
+            
+            // Function to show typing indicator
+            function showTypingIndicator() {
+                const typingDiv = document.createElement('div');
+                typingDiv.id = 'typingIndicator';
+                typingDiv.classList.add('message', 'ai-message', 'typing-indicator');
+                typingDiv.innerHTML = `<span></span><span></span><span></span>`;
+                chatContainer.appendChild(typingDiv);
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
+            
+            // Function to remove typing indicator
+            function removeTypingIndicator() {
+                const typingIndicator = document.getElementById('typingIndicator');
+                if (typingIndicator) {
+                    typingIndicator.remove();
+                }
+            }
+            
+            // Function to send message to AI
+            async function sendToAI(message) {
+                showTypingIndicator();
+                
+                try {
+                    // In a real app, this would be a fetch to your backend
+                    // const response = await fetch('/api/assistant', {
+                    //     method: 'POST',
+                    //     headers: { 'Content-Type': 'application/json' },
+                    //     body: JSON.stringify({ query: message })
+                    // });
+                    // const data = await response.json();
+                    
+                    // Simulate API delay
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                    
+                    // Simple responses for demo
+                    let aiResponse = "I'm your PocketTask AI assistant. How can I help you find services today?";
+                    
+                    if (message.toLowerCase().includes('service')) {
+                        aiResponse = "We offer various services including teaching, healthcare, housing, and more. What specific service are you looking for?";
+                    } else if (message.toLowerCase().includes('price') || message.toLowerCase().includes('cost')) {
+                        aiResponse = "Prices vary by service provider. You can view detailed pricing on each service page.";
+                    } else if (message.toLowerCase().includes('tutor')) {
+                        aiResponse = "We have many qualified tutors available. You can find them in the 'Tutoring' category or use the search function on the homepage.";
+                    } else if (message.toLowerCase().includes('help')) {
+                        aiResponse = "I can help you find services, answer questions about PocketTask, or connect you with professionals.";
+                    }
+                    
+                    removeTypingIndicator();
+                    addMessage(aiResponse);
+                } catch (error) {
+                    console.error('Error:', error);
+                    removeTypingIndicator();
+                    addMessage('Sorry, I encountered an error. Please try again later.');
+                }
+            }
+            
+            // Event listener for send button
+            sendButton.addEventListener('click', () => {
+                const message = userInput.value.trim();
+                if (message) {
+                    addMessage(message, true);
+                    userInput.value = '';
+                    sendToAI(message);
+                }
+            });
+            
+            // Event listener for Enter key
+            userInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendButton.click();
+                }
+            });
+            
+            // Event listeners for suggestion buttons
+            suggestionBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const message = btn.textContent.trim();
+                    addMessage(message, true);
+                    sendToAI(message);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

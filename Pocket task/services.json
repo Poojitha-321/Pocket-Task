@@ -1,0 +1,16 @@
+[
+  { "id": 1, "name": "Teaching", "description": "Professional teaching services", "url": "tech.html", "icon": "fa-chalkboard-teacher" },
+  { "id": 2, "name": "Tutoring", "description": "Private tutoring services", "url": "tut.html", "icon": "fa-book-reader" },
+  { "id": 3, "name": "Software Training", "description": "Programming & development courses", "url": "softtut.html", "icon": "fa-laptop-code" },
+  { "id": 4, "name": "Healthcare", "description": "Medical & healthcare services", "url": "health.html", "icon": "fa-heartbeat" },
+  { "id": 5, "name": "Fitness", "description": "Personal training & fitness", "url": "fit.html", "icon": "fa-dumbbell" },
+  { "id": 6, "name": "Housing", "description": "Property & real estate services", "url": "house.html", "icon": "fa-home" },
+  { "id": 7, "name": "Transport", "description": "Transportation & logistics", "url": "transport.html", "icon": "fa-truck" },
+  { "id": 8, "name": "Professional Services", "description": "Professional services", "url": "prof.html", "icon": "fa-briefcase" },
+  { "id": 9, "name": "Media Services", "description": "Media & entertainment", "url": "media.html", "icon": "fa-photo-video" },
+  { "id": 10, "name": "Event Planning", "description": "Event planning & management", "url": "event.html", "icon": "fa-calendar-alt" },
+  { "id": 11, "name": "Construction & Repairs", "description": "Construction & repairs", "url": "consrep.html", "icon": "fa-tools" },
+  { "id": 12, "name": "Banking Services", "description": "Financial services", "url": "bank.html", "icon": "fa-piggy-bank" },
+  { "id": 13, "name": "Art & Design", "description": "Creative services", "url": "art.html", "icon": "fa-palette" },
+  { "id": 14, "name": "Pet Services", "description": "Pet care & veterinary services", "url": "pet.html", "icon": "fa-paw" }
+]

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - ServiceHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-yellow-400 via-pink-500 to-violet-600 flex items-center justify-center p-4">
+    <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 shadow-xl w-full max-w-2xl border border-white/20">
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-white mb-2">Register as Service Provider</h1>
+            <p class="text-gray-200">Join our network of professional service providers</p>
+        </div>
+
+        <form class="space-y-6" onsubmit="handleRegistration(event)">
+            <!-- Personal Information -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="group">
+                    <label class="block text-white text-sm font-semibold mb-2">Full Name</label>
+                    <input type="text" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-300 transition-all duration-300" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="group relative">
+                    <label class="block text-white text-sm font-semibold mb-2">Mobile Number</label>
+                    <div class="flex gap-2">
+                        <input type="tel" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-300 transition-all duration-300" placeholder="Enter mobile number" required>
+                        <button type="button" class="px-4 py-2 bg-teal-600 text-white rounded-xl hover:bg-teal-700 transition-colors whitespace-nowrap">
+                            Verify OTP
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Aadhaar Verification -->
+                <div class="group relative">
+                    <label class="block text-white text-sm font-semibold mb-2">Aadhaar Number</label>
+                    <div class="flex gap-2">
+                        <input id="aadhaar" type="text" maxlength="12" pattern="\d{12}" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-300 transition-all duration-300" placeholder="Enter 12-digit Aadhaar number" required>
+                        <button type="button" onclick="verifyAadhaar()" class="px-4 py-2 bg-green-600 text-white rounded-xl hover:bg-green-700 transition-colors whitespace-nowrap">
+                            Verify Aadhaar
+                        </button>
+                    </div>
+                    <p id="aadhaarStatus" class="mt-2 text-sm font-semibold"></p>
+                </div>
+
+                <div class="group">
+                    <label class="block text-white text-sm font-semibold mb-2">PAN Card Number</label>
+                    <input type="text" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-300 transition-all duration-300" placeholder="Enter PAN number" required>
+                </div>
+
+                <div class="group">
+                    <label class="block text-white text-sm font-semibold mb-2">Toll Free Number (Optional)</label>
+                    <input type="tel" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-300 transition-all duration-300" placeholder="Enter toll free number">
+                </div>
+
+                <div class="group">
+                    <label class="block text-white text-sm font-semibold mb-2">Email Address</label>
+                    <input type="email" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-300 transition-all duration-300" placeholder="Enter email address" required>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="group">
+                <label class="block text-white text-sm font-semibold mb-2">Skills & Expertise</label>
+                <textarea class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-300 transition-all duration-300 h-32" placeholder="List your skills and expertise..." required></textarea>
+            </div>
+
+            <!-- Experience Level -->
+            <div class="group">
+                <label class="block text-white text-sm font-semibold mb-2">Experience Level</label>
+                <select class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-300 transition-all duration-300" required>
+                    <option value="" disabled selected class="text-gray-700">Select experience level</option>
+                    <option value="beginner" class="text-gray-700">Beginner (0-2 years)</option>
+                    <option value="intermediate" class="text-gray-700">Intermediate (2-5 years)</option>
+                    <option value="expert" class="text-gray-700">Expert (5+ years)</option>
+                </select>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="w-full py-4 bg-gradient-to-r from-yellow-400 via-pink-500 to-violet-500 text-white font-semibold rounded-xl transition duration-300 transform hover:scale-105 hover:shadow-lg hover:from-yellow-500 hover:via-pink-600 hover:to-violet-600">
+                Register Now
+            </button>
+
+            <!-- Login Link -->
+            <a href="login.html" class="text-white font-semibold hover:text-yellow-300 transition-colors duration-300">
+                Login here
+            </a>
+        </form>
+    </div>
+
+    <!-- Gradient Animation -->
+    <style>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        body {
+            background-size: 200% 200%;
+            animation: gradient 15s ease infinite;
+        }
+    </style>
+
+    <!-- Aadhaar Verification Script -->
+    <script>
+        function verifyAadhaar() {
+            const aadhaarInput = document.getElementById("aadhaar");
+            const status = document.getElementById("aadhaarStatus");
+            const aadhaarNumber = aadhaarInput.value.trim();
+
+            if (/^\d{12}$/.test(aadhaarNumber)) {
+                status.textContent = "✅ Aadhaar Verified Successfully!";
+                status.className = "mt-2 text-sm font-semibold text-green-300";
+            } else {
+                status.textContent = "❌ Invalid Aadhaar Number. Must be 12 digits.";
+                status.className = "mt-2 text-sm font-semibold text-red-300";
+            }
+        }
+
+        function handleRegistration(event) {
+            event.preventDefault(); // Prevent default form submission
+            alert("Form submitted! (You can add actual submission logic here.)");
+            // Redirect to index.html after successful registration
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

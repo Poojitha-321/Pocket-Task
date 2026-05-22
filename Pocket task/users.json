@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john@example.com",
+    "password": "password123",
+    "coins": 50,
+    "joinDate": "2023-01-15T08:30:00.000Z"
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "email": "jane@example.com",
+    "password": "password123",
+    "coins": 75,
+    "joinDate": "2023-02-20T10:15:00.000Z"
+  }
+]

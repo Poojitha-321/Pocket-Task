@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PocketTask - Post a Job</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-indigo-50 to-purple-50 min-h-screen">
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-indigo-600">PocketTask</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-600 hover:text-indigo-600">Home</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">Post a Job</h1>
+        
+        <div class="bg-white rounded-xl shadow-lg p-6">
+            <form class="space-y-6">
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Job Title</label>
+                    <input type="text" class="w-full px-4 py-2 rounded-lg border focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Job Category</label>
+                    <select class="w-full px-4 py-2 rounded-lg border focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
+                        <option value="">Select a category</option>
+                        <option value="professional">Professional</option>
+                        <option value="skilled">Skilled Labor</option>
+                        <option value="common">Common Jobs</option>
+                        <option value="entry">Entry Level</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Location</label>
+                    <input type="text" class="w-full px-4 py-2 rounded-lg border focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" placeholder="City, State">
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Salary Range</label>
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="number" placeholder="Min" class="px-4 py-2 rounded-lg border focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
+                        <input type="number" placeholder="Max" class="px-4 py-2 rounded-lg border focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Job Description</label>
+                    <textarea rows="4" class="w-full px-4 py-2 rounded-lg border focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Requirements</label>
+                    <textarea rows="4" class="w-full px-4 py-2 rounded-lg border focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Contact Information</label>
+                    <input type="email" placeholder="Email" class="w-full px-4 py-2 rounded-lg border focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 mb-2">
+                    <input type="tel" placeholder="Phone" class="w-full px-4 py-2 rounded-lg border focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
+                </div>
+
+                <div class="flex items-center">
+                    <input type="checkbox" class="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 mr-2">
+                    <label class="text-gray-700 text-sm">I agree to the terms and conditions</label>
+                </div>
+
+                <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition-colors">
+                    Post Job
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            showNotification('Job Posted! 💼', 'You earned 15 coins for posting a job!');
+            addCoins(15);
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

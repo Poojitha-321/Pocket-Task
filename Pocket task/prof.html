@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Professional Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .service-card {
+            transition: all 0.4s ease;
+            transform-origin: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .tech-icon {
+            animation: matrix 3s infinite;
+        }
+
+        @keyframes matrix {
+            0% { transform: translateY(0) scale(1); color: #10b981; }
+            50% { transform: translateY(-5px) scale(1.1); color: #3b82f6; }
+            100% { transform: translateY(0) scale(1); color: #10b981; }
+        }
+
+        .service-card:hover .tech-icon {
+            animation-duration: 1.5s;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold text-center text-emerald-600 mb-12">IT Professional Services</h1>
+        
+        <div class="flex flex-wrap justify-center gap-8">
+            <!-- IT Professional -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="tech-icon text-emerald-600 mb-4 flex items-center gap-2">
+                        <i class="fas fa-laptop-code text-4xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">IT Professional</h3>
+                    <p class="text-gray-600 text-center mb-4">Information Technology Expert</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/it+professional" target="_blank" 
+                       class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Software Engineer -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="tech-icon text-emerald-600 mb-4">
+                        <i class="fas fa-code text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Software Engineer</h3>
+                    <p class="text-gray-600 text-center mb-4">Software Development Expert</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/software+engineer" target="_blank" 
+                       class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cyber Security -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="tech-icon text-emerald-600 mb-4">
+                        <i class="fas fa-shield-alt text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Cyber Security</h3>
+                    <p class="text-gray-600 text-center mb-4">Security Solutions Specialist</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/cyber+security" target="_blank" 
+                       class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cloud Engineer -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="tech-icon text-emerald-600 mb-4">
+                        <i class="fas fa-cloud text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Cloud Engineer</h3>
+                    <p class="text-gray-600 text-center mb-4">Cloud Infrastructure Expert</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/cloud+engineer" target="_blank" 
+                       class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- IT Support -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="tech-icon text-emerald-600 mb-4">
+                        <i class="fas fa-headset text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">IT Support Specialist</h3>
+                    <p class="text-gray-600 text-center mb-4">Technical Support Expert</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/it+support" target="_blank" 
+                       class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Data Analyst -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="tech-icon text-emerald-600 mb-4">
+                        <i class="fas fa-chart-line text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Data Analyst</h3>
+                    <p class="text-gray-600 text-center mb-4">Data Analysis Professional</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/data+analyst" target="_blank" 
+                       class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Frontend Developer -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="tech-icon text-emerald-600 mb-4">
+                        <i class="fas fa-desktop text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Frontend Developer</h3>
+                    <p class="text-gray-600 text-center mb-4">UI Development Expert</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/frontend+developer" target="_blank" 
+                       class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Backend Developer -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="tech-icon text-emerald-600 mb-4">
+                        <i class="fas fa-server text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Backend Developer</h3>
+                    <p class="text-gray-600 text-center mb-4">Server-side Development Expert</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="https://www.google.com/maps/search/backend+developer" target="_blank" 
+                       class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

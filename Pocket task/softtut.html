@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Development Courses</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Add this in the style section -->
+    <style>
+        .service-card {
+            transition: all 0.4s ease;
+            transform-origin: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .code-icon {
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); color: #2563eb; }
+            50% { transform: scale(1.1); color: #7c3aed; }
+            100% { transform: scale(1); color: #2563eb; }
+        }
+
+        .service-card:hover .code-icon {
+            animation-duration: 1.5s;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-purple-50">
+    <div class="container mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold text-center text-blue-600 mb-12">Software Development Courses</h1>
+        
+        <div class="flex flex-wrap justify-center gap-8">
+            <!-- C Programming -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="code-icon text-blue-600 mb-4 flex items-center gap-2">
+                        <i class="fas fa-code text-4xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">C Programming</h3>
+                    <p class="text-gray-600 text-center mb-4">Master C Programming Language</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="#" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-info-circle"></i>
+                        Details
+                    </a>
+                </div>
+            </div>
+
+            <!-- Python -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="code-icon text-blue-600 mb-4">
+                        <i class="fab fa-python text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Python</h3>
+                    <p class="text-gray-600 text-center mb-4">Learn Python Programming</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="#" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-info-circle"></i>
+                        Details
+                    </a>
+                </div>
+            </div>
+
+            <!-- C++ -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="code-icon text-blue-600 mb-4">
+                        <i class="fas fa-file-code text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">C++</h3>
+                    <p class="text-gray-600 text-center mb-4">Learn C++ Programming</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="#" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-info-circle"></i>
+                        Details
+                    </a>
+                </div>
+            </div>
+
+            <!-- Java -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="code-icon text-blue-600 mb-4">
+                        <i class="fab fa-java text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Java</h3>
+                    <p class="text-gray-600 text-center mb-4">Master Java Programming</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="#" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-info-circle"></i>
+                        Details
+                    </a>
+                </div>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="code-icon text-blue-600 mb-4">
+                        <i class="fab fa-js text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">JavaScript</h3>
+                    <p class="text-gray-600 text-center mb-4">Learn Modern JavaScript</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="#" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-info-circle"></i>
+                        Details
+                    </a>
+                </div>
+            </div>
+
+            <!-- Kotlin -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="code-icon text-blue-600 mb-4">
+                        <i class="fab fa-android text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Kotlin</h3>
+                    <p class="text-gray-600 text-center mb-4">Android Development with Kotlin</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="#" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-info-circle"></i>
+                        Details
+                    </a>
+                </div>
+            </div>
+
+            <!-- Frontend Development -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="code-icon text-blue-600 mb-4">
+                        <i class="fas fa-laptop-code text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Frontend Development</h3>
+                    <p class="text-gray-600 text-center mb-4">HTML, CSS, JavaScript & React</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="#" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-info-circle"></i>
+                        Details
+                    </a>
+                </div>
+            </div>
+
+            <!-- Backend Development -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="code-icon text-blue-600 mb-4">
+                        <i class="fas fa-server text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Backend Development</h3>
+                    <p class="text-gray-600 text-center mb-4">Node.js, Express & Databases</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="#" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-info-circle"></i>
+                        Details
+                    </a>
+                </div>
+            </div>
+
+            <!-- MERN Stack -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="code-icon text-blue-600 mb-4">
+                        <i class="fas fa-layer-group text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">MERN Stack</h3>
+                    <p class="text-gray-600 text-center mb-4">MongoDB, Express, React & Node.js</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="#" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-info-circle"></i>
+                        Details
+                    </a>
+                </div>
+            </div>
+
+            <!-- Other Courses -->
+            <div class="service-card bg-white rounded-xl p-6 w-72 flex flex-col items-center min-h-[360px] justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="code-icon text-blue-600 mb-4">
+                        <i class="fas fa-ellipsis-h text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Other Courses</h3>
+                    <p class="text-gray-600 text-center mb-4">DevOps, Cloud & More</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="register.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                    <a href="#" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
+                        <i class="fas fa-info-circle"></i>
+                        Details
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- Modal Templates -->
+<div id="cProgrammingModal" class="modal">
+    <div class="modal-content">
+        <div class="mb-6">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">C Programming</h2>
+            
+            <div class="space-y-4">
+                <div>
+                    <h3 class="text-lg font-semibold text-blue-800">Why C Programming?</h3>
+                    <ul class="list-disc ml-6 text-gray-600">
+                        <li>Foundation of modern programming languages</li>
+                        <li>Essential for system programming and embedded systems</li>
+                        <li>Better understanding of memory management</li>
+                        <li>High performance and efficiency</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-blue-800">Course Duration</h3>
+                    <p class="text-gray-600">3 months (120 hours)</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-blue-800">Course Highlights</h3>
+                    <ul class="list-disc ml-6 text-gray-600">
+                        <li>Hands-on programming exercises</li>
+                        <li>Real-world project development</li>
+                        <li>Industry expert mentorship</li>
+                        <li>Placement assistance</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-blue-800">Career Opportunities</h3>
+                    <ul class="list-disc ml-6 text-gray-600">
+                        <li>Systems Programmer</li>
+                        <li>Embedded Systems Developer</li>
+                        <li>Software Developer</li>
+                        <li>Game Developer</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex gap-4 justify-end mt-6">
+            <button onclick="closeModal('cProgrammingModal')" class="px-6 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600">
+                Close
+            </button>
+            <a href="register.html" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center gap-2">
+                <i class="fas fa-user-plus"></i>
+                Register Now
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Add similar modals for other courses -->
+
+<!-- Add this JavaScript before closing body tag -->
+<script>
+    function showModal(modalId) {
+        document.getElementById(modalId).classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    // Update the Details buttons
+    document.querySelectorAll('.service-card').forEach(card => {
+        const detailsBtn = card.querySelector('a[href="#"]');
+        if (detailsBtn) {
+            const courseName = card.querySelector('h3').textContent.replace(/\s+/g, '');
+            detailsBtn.onclick = (e) => {
+                e.preventDefault();
+                showModal(courseName + 'Modal');
+            };
+        }
+    });
+</script>
+</html>
